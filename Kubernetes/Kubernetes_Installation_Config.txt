@@ -45,7 +45,8 @@ reboot
 
 #To allow kubelet to work properly, we need to disable swap on both machines.
 
-sudo swapoff -a
+sudo swapoff -a                             (disable swap space. swap space is a portion of the hard drive used as virtual memory when the physical ram is full)
+# this option effectively tells the system to stop using swap and rely entirely on physical memory(ram)
 sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 
 #Install Docker :
